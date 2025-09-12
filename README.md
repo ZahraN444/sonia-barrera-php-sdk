@@ -10,19 +10,19 @@ Simple calculator API hosted on APIMATIC for demo purposes
 Run the following command to install the package and automatically add the dependency to your composer.json file:
 
 ```bash
-composer require "name-org/sonia-barrera-sdk:0.0.1"
+composer require "name-org/sonia-barrera-sdk:3.0.0"
 ```
 
 Or add it to the composer.json file manually as given below:
 
 ```json
 "require": {
-    "name-org/sonia-barrera-sdk": "0.0.1"
+    "name-org/sonia-barrera-sdk": "3.0.0"
 }
 ```
 
 You can also view the package at:
-https://packagist.org/packages/name-org/sonia-barrera-sdk#0.0.1
+https://packagist.org/packages/name-org/sonia-barrera-sdk#3.0.0
 
 ## Initialize the API Client
 
