@@ -1,28 +1,37 @@
 
-# Getting Started with APIMATIC Calculator - zip
+# Getting Started with APIMATIC Calculator
 
 ## Introduction
 
-Simple calculator API hosted on APIMATIC for demo purposes
+Simple calculator API hosted on APIMATIC
 
 ## Install the Package
 
 Run the following command to install the package and automatically add the dependency to your composer.json file:
 
 ```bash
-composer require "name-org/sonia-barrera-sdk:3.0.0"
+composer require "name-org/sonia-barrera-sdk:3.0.1"
 ```
 
 Or add it to the composer.json file manually as given below:
 
 ```json
 "require": {
-    "name-org/sonia-barrera-sdk": "3.0.0"
+    "name-org/sonia-barrera-sdk": "3.0.1"
 }
 ```
 
 You can also view the package at:
-https://packagist.org/packages/name-org/sonia-barrera-sdk#3.0.0
+https://packagist.org/packages/name-org/sonia-barrera-sdk#3.0.1
+
+## Test the SDK
+
+Unit tests in this SDK can be run using PHPUnit.
+
+1. First install the dependencies using composer including the `require-dev` dependencies.
+2. Run `vendor\bin\phpunit --verbose` from commandline to execute tests. If you have installed PHPUnit globally, run tests using `phpunit --verbose` instead.
+
+You can change the PHPUnit test configuration in the `phpunit.xml` file.
 
 ## Initialize the API Client
 
@@ -32,7 +41,8 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| timeout | `int` | Timeout for API calls in seconds.<br>*Default*: `60` |
+| environment | `Environment` | The API environment. <br> **Default: `Environment.PRODUCTION`** |
+| timeout | `int` | Timeout for API calls in seconds.<br>*Default*: `0` |
 | enableRetries | `bool` | Whether to enable retries and backoff feature.<br>*Default*: `false` |
 | numberOfRetries | `int` | The number of retries to make.<br>*Default*: `0` |
 | retryInterval | `float` | The retry time interval between the endpoint calls.<br>*Default*: `1` |
@@ -46,9 +56,12 @@ The following parameters are configurable for the API Client:
 The API client can be initialized as follows:
 
 ```php
-use APIMATICCalculatorZipLib\APIMATICCalculatorZipClientBuilder;
+use APIMATICCalculatorLib\Environment;
+use APIMATICCalculatorLib\APIMATICCalculatorClientBuilder;
 
-$client = APIMATICCalculatorZipClientBuilder::init()->build();
+$client = APIMATICCalculatorClientBuilder::init()
+    ->environment(Environment::PRODUCTION)
+    ->build();
 ```
 
 ## List of APIs

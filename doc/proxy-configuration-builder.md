@@ -22,10 +22,10 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 ```php
 <?php
 
-use APIMATICCalculatorZipLib\APIMATICCalculatorZipClientBuilder;
-use APIMATICCalculatorZipLib\Proxy\ProxyConfigurationBuilder;
+use APIMATICCalculatorLib\APIMATICCalculatorClientBuilder;
+use APIMATICCalculatorLib\Proxy\ProxyConfigurationBuilder;
 // initialize the sdk client using a proxy configuration
-$client = APIMATICCalculatorZipClientBuilder::init()
+$client = APIMATICCalculatorClientBuilder::init()
     ->proxyConfiguration(
         ProxyConfigurationBuilder::init('http://localhost')
             ->port(8080)
